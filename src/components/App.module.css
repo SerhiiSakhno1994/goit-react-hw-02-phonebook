@@ -1,0 +1,11 @@
+h1,
+h2 {
+  color: #4285f4;
+  margin: 20px auto 0;
+  width: 200px;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 20px;
+}
