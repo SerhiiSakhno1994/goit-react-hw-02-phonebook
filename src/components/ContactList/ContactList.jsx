@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
 import s from './ContactList.module.css';
+import Button from '../Button/Button';
 
 function ContactList({ contacts, onDeletContact }) {
   return (
@@ -9,9 +10,10 @@ function ContactList({ contacts, onDeletContact }) {
         <li key={id} className={s.item}>
           <p className={s.text}>{name} :</p>
           <p className={s.text}>{number}</p>
-          <button className={s.button} onClick={() => onDeletContact(id)}>
+          {/* <button className={s.button} onClick={() => onDeletContact(id)}>
             Delete
-          </button>
+          </button> */}
+          <Button text="Delete" onClick={() => onDeletContact(id)} />
         </li>
       ))}
     </ul>

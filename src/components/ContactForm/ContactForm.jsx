@@ -2,6 +2,7 @@ import React from 'react';
 import { nanoid } from 'nanoid';
 
 import s from './ContactForm.module.css';
+import Button from '../Button/Button';
 
 class ContactForm extends React.Component {
   state = {
@@ -58,9 +59,10 @@ class ContactForm extends React.Component {
             onChange={this.handleChange}
           />
         </label>
-        <button className={s.button} type="submit">
+        {/* <button className={s.button} type="submit">
           Add Contact
-        </button>
+        </button> */}
+        <Button text="Add Contact" />
       </form>
     );
   }
