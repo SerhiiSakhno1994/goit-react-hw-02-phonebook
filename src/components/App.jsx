@@ -11,9 +11,25 @@ import s from './App.module.css';
 
 class App extends Component {
   state = {
-    contacts: initialContacts,
+    contacts: [],
     filter: '',
   };
+
+  componentDidMount() {
+    const contacts = localStorage.getItem('contacts');
+    const parsContact = JSON.parse(contacts);
+
+    // if (parsContact) {
+    this.setState({ contacts: parsContact ?? initialContacts });
+    // }
+  }
+  componentDidUpdate(prevProps, prevState) {
+    const nextContackt = this.state.contacts;
+    const prevContact = prevState.contacts;
+    if (nextContackt !== prevContact) {
+      localStorage.setItem('contacts', JSON.stringify(nextContackt));
+    }
+  }
 
   addContact = ({ name, number }) => {
     let isAdded = false;

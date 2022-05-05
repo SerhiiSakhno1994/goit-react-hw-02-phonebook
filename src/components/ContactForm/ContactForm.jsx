@@ -54,14 +54,11 @@ class ContactForm extends React.Component {
             value={number}
             placeholder="Phone"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +00 000 000 00 00"
             required
             onChange={this.handleChange}
           />
         </label>
-        {/* <button className={s.button} type="submit">
-          Add Contact
-        </button> */}
         <Button text="Add Contact" />
       </form>
     );

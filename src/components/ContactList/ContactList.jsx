@@ -10,9 +10,6 @@ function ContactList({ contacts, onDeletContact }) {
         <li key={id} className={s.item}>
           <p className={s.text}>{name} :</p>
           <p className={s.text}>{number}</p>
-          {/* <button className={s.button} onClick={() => onDeletContact(id)}>
-            Delete
-          </button> */}
           <Button text="Delete" onClick={() => onDeletContact(id)} />
         </li>
       ))}
@@ -21,7 +18,13 @@ function ContactList({ contacts, onDeletContact }) {
 }
 
 ContactList.propTypes = {
-  contacts: PropTypes.array.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }),
+  ),
   onDeletContact: PropTypes.func.isRequired,
 };
 
